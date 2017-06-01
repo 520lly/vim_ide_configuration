@@ -61,7 +61,7 @@ snippet wh
 	}
 # For Loop
 snippet for
-	for (${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
+	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
 		${4:/* code */}
 	}
 # Custom For Loop
@@ -108,3 +108,213 @@ snippet .
 	[${1}]${2}
 snippet un
 	unsigned
+snippet zxqinc
+	/******************************************************************************
+	 * Project ZXQ Internet Car
+	 * (c) copyright 2015
+	 * Company SAIC Motor
+	 * All rights reserved
+	 * Secrecy Level STRICTLY CONFIDENTIAL
+	 *****************************************************************************/
+	/*
+	* @file ${1:`Filename("$1.h")`}
+	* @group ${2:group} 
+	* @author ${3:wangjq}
+	* @desp ${4:secription}
+	 */
+
+	#ifndef _${5:`toupper(Filename('', 'UNTITLED'))`}_H_
+	#define _${5:`toupper(Filename('', 'UNTITLED'))`}_H_
+
+	/*-----------------------------------------------------------------------------
+	 * INCLUDES AND NAMESPACE
+	 *---------------------------------------------------------------------------*/
+
+
+
+	/*-----------------------------------------------------------------------------
+	 * CLASS IMPLEMENTATIONS
+	 *----------------------------------------------------------------------------*/
+
+
+	/*-----------------------------------------------------------------------------
+	 * MACROS AND CONSTANTS
+	 *---------------------------------------------------------------------------*/
+
+
+
+	/*-----------------------------------------------------------------------------
+	 * ENUMS, MACROS, STRUCTS
+	 *---------------------------------------------------------------------------*/
+
+
+	/*-----------------------------------------------------------------------------
+	 * FUNCTION PROTOTYPES
+	 *---------------------------------------------------------------------------*/
+
+
+	/*-----------------------------------------------------------------------------
+	 * LOCAL AND GLOBAL VARIABLES
+	 *---------------------------------------------------------------------------*/
+
+
+
+	/*-----------------------------------------------------------------------------
+	 * CLASS IMPLEMENTATIONS
+	 *---------------------------------------------------------------------------*/
+
+
+
+	#endif   //_${5:`toupper(Filename('', 'UNTITLED'))`}_H_
+snippet zxqsrc
+	/******************************************************************************
+	 * Project ZXQ Internet Car
+	 * (c) copyright 2015
+	 * Company SAIC Motor
+	 * All rights reserved
+	 * Secrecy Level STRICTLY CONFIDENTIAL
+	 *****************************************************************************/
+	/*
+	* @file ${1:`Filename("$1.c")`}
+	* @group ${2:group} 
+	* @author ${3:wangjq}
+	* @desp ${4:secription}
+	 */
+
+
+	/*-----------------------------------------------------------------------------
+	 * INCLUDES AND NAMESPACE
+	 *---------------------------------------------------------------------------*/
+
+
+	/*-----------------------------------------------------------------------------
+	 * CLASS IMPLEMENTATIONS
+	 *----------------------------------------------------------------------------*/
+
+
+	/*-----------------------------------------------------------------------------
+	 * MACROS AND CONSTANTS
+	 *---------------------------------------------------------------------------*/
+
+
+
+	/*-----------------------------------------------------------------------------
+	 * ENUMS, MACROS, STRUCTS
+	 *---------------------------------------------------------------------------*/
+
+
+	/*-----------------------------------------------------------------------------
+	 * FUNCTION PROTOTYPES
+	 *---------------------------------------------------------------------------*/
+
+
+	/*-----------------------------------------------------------------------------
+	 * LOCAL AND GLOBAL VARIABLES
+	 *---------------------------------------------------------------------------*/
+
+
+
+	/*-----------------------------------------------------------------------------
+	 * CLASS IMPLEMENTATIONS
+	 *---------------------------------------------------------------------------*/
+
+
+
+snippet itor
+	auto itor = ${1:xxx}.begin();
+	for (; itor != ${1:xxx}.end(); itor++) {
+			
+	}
+snippet cc
+	/*
+	 * commanted by ${1:wangjq}
+	 *
+	 * description ${2:xxx}
+	 */
+
+snippet enum
+	enum ${1:enumName}
+	{
+		${2:enumContext}	
+	};
+
+snippet struct
+	struct ${1:enumName}
+	{
+		${2:enumContext}	
+	};
+snippet class
+	class ${1:enumName}
+	{
+		${2:enumContext}	
+	};
+
+snippet zebrainc
+	/***************************************************************************************
+	 *
+	 *  Project:        ZXQ
+	 *
+	 *  Copyright ©     2014-2017 Banma Technologies Co.,Ltd
+	 *                  All rights reserved.
+	 *
+	 *  This software is supplied only under the terms of a license agreement,
+	 *  nondisclosure agreement or other written agreement with Banma Technologies
+	 *  Co.,Ltd. Use, redistribution or other disclosure of any parts of this
+	 *  software is prohibited except in accordance with the terms of such written
+	 *  agreement with Banma Technologies Co.,Ltd. This software is confidential
+	 *  and proprietary information of Banma Technologies Co.,Ltd.
+	 *
+	 ***************************************************************************************
+	 *
+	 *  Header Name: ${1:`Filename("$1.h")`}
+	 *
+	 *  General Description: Copyright and file header.
+	 *
+	 *  Revision History:
+	 *                           Modification
+	 *   Author                Date(MM/DD/YYYY)   JiraID           Description of Changes
+	 *   ---------------------   ------------    ----------     -----------------------------
+	 *   ${2:wangjq}                  ${3:`system("date +%m/%d/%Y")`}              
+	 *
+	 ****************************************************************************************/
+
+	#ifndef _${4:`toupper(Filename('', 'UNTITLED'))`}_H_
+	#define _${4:`toupper(Filename('', 'UNTITLED'))`}_H_
+
+
+	#endif   //_${4:`toupper(Filename('', 'UNTITLED'))`}_H_
+
+snippet zebrasrc
+	/***************************************************************************************
+	 *
+	 *  Project:        ZXQ
+	 *
+	 *  Copyright ©     2014-2017 Banma Technologies Co.,Ltd
+	 *                  All rights reserved.
+	 *
+	 *  This software is supplied only under the terms of a license agreement,
+	 *  nondisclosure agreement or other written agreement with Banma Technologies
+	 *  Co.,Ltd. Use, redistribution or other disclosure of any parts of this
+	 *  software is prohibited except in accordance with the terms of such written
+	 *  agreement with Banma Technologies Co.,Ltd. This software is confidential
+	 *  and proprietary information of Banma Technologies Co.,Ltd.
+	 *
+	 ***************************************************************************************
+	 *
+	 *  Header Name: ${1:`Filename("$1.c")`}
+	 *
+	 *  General Description: Copyright and file header.
+	 *
+	 *  Revision History:
+	 *                           Modification
+	 *   Author                Date(MM/DD/YYYY)   JiraID           Description of Changes
+	 *   ---------------------   ------------    ----------     -----------------------------
+	 *   ${2:wangjq}                  ${3:`system("date +%m/%d/%Y")`}             
+	 *
+	 ****************************************************************************************/
+
+
+
+
+
+

@@ -26,3 +26,23 @@ snippet case
 		${2:pattern})
 			${3};;
 	esac
+snippet getopts
+	while getopts :h OPS;do
+		case "$OPS" in
+		h)
+			${1:/*do something*/}
+			;;
+		\?)
+			usage;;
+	esac
+snippet usage
+	function usage()
+	{
+		echo "usage: '`basename \$0\`' [${1:options}] [${2:params}]
+					-h  for hlep"	
+	}
+snippet fun
+	function ${1:name} (${2:args}) {
+		${3:# body}
+	}
+

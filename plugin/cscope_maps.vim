@@ -37,8 +37,41 @@ if has("cscope")
     " if you want the reverse search order.
     set csto=0
 
+    let $current_path_dir=getcwd()
+    let $mode_start_pat=$HOEM.'.*'.'workspace/'
+    let $mode_end_pat=$HOEM.'.*'.'workspace/[^/]*'
+    let $mode_start =matchend($current_path_dir,$mode_start_pat)
+    let $mode_end =matchend($current_path_dir,$mode_end_pat)
+    let $mode_length=0
+    if $mode_end == -1
+        let $mode_length=strlen($current_path_dir) - $mode_start
+    else 
+        let $mode_length=$mode_end - $mode_start
+    endif
+    let $mode=strpart($current_path_dir,$mode_start,$mode_length)
+    if $mode =="bt_service"
+        let $start_pat = $HOME
+        let $end_pat = '\/workspace'
+        let $pat = $start_pat.'\/.*'.$end_pat
+        let $work_space=matchstr($current_path_dir,$pat)
+        let $length = strlen($work_space) - strlen($start_pat) - strlen($end_pat)
+        let $start=matchend($current_path_dir,$start_pat) + 1
+        let $end=matchend($current_path_dir,$end_pat)
+        let $pro=strpart($current_path_dir,$start,$length)
+        let $cscope_path = $HOME.'/'.$pro.'/external/Opensynergy/blue-sdk/arm-linux/cscope.out'
+        if filereadable($cscope_path)
+            cs add $cscope_path
+        endif
+
+        if $mode_end != -1
+            let $cscope_path=$HOME.'/'.$pro.'/workspace/bt_service/cscope.out'
+            if filereadable($cscope_path)
+                cs add $cscope_path
+            endif
+        endif
+    endif
     " add any cscope database in current directory
-    if filereadable("cscope.out")
+    if filereadable("cscope.out") && $mode_end == -1
         cs add cscope.out  
     " else add the database pointed to by environment variable 
     elseif $CSCOPE_DB != ""
